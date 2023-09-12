@@ -1,29 +1,6 @@
-import fs from "fs/promises";
-import matter from "gray-matter";
 import Link from "next/link";
-import path from "path";
 import { FC } from "react";
-import { remark } from "remark";
-import html from "remark-html";
-
-async function getIssueByIssueName(issueName: string) {
-  const fullPath = path.join(
-    process.cwd(),
-    "src/fe-news/issues",
-    `${issueName}.md`
-  );
-
-  const fileContents = await fs.readFile(fullPath, "utf8");
-
-  const matterResult = matter(fileContents);
-
-  const processedContent = await remark()
-    .use(html)
-    .process(matterResult.content);
-  const contentHtml = processedContent.toString();
-
-  return contentHtml;
-}
+import { getIssueByIssueName, getIssues } from "../api";
 
 const IssuePage: FC<{
   params: {
@@ -54,3 +31,10 @@ const IssuePage: FC<{
 };
 
 export default IssuePage;
+
+export async function generateStaticParams() {
+  const issues = await getIssues();
+  return issues.map((issue) => ({
+    issueName: issue
+  }));
+}
