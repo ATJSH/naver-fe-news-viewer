@@ -11,10 +11,14 @@ async function getIssues(): Promise<string[]> {
 
 const IssuesPage: FC = async () => {
   const issues = await getIssues();
+  issues.reverse();
 
   return (
     <main>
-      <h1>Issues</h1>
+      <h1>fs-news Issues</h1>
+      <p>
+        data from <a href="https://github.com/naver/fe-news">naver/fe-news</a>
+      </p>
       <ul>
         {issues.map((issue) => (
           <li key={issue}>

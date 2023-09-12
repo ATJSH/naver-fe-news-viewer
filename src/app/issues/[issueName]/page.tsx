@@ -1,5 +1,6 @@
 import fs from "fs/promises";
 import matter from "gray-matter";
+import Link from "next/link";
 import path from "path";
 import { FC } from "react";
 import { remark } from "remark";
@@ -31,6 +32,18 @@ const IssuePage: FC<{
 }> = async ({ params: { issueName } }) => {
   return (
     <div>
+      <p>
+        data from <a href="https://github.com/naver/fe-news">naver/fe-news</a>
+      </p>
+      <header
+        style={{
+          position: "sticky",
+          top: 0,
+          backgroundColor: "white"
+        }}
+      >
+        <Link href="/issues">← Back to issues</Link>
+      </header>
       <div
         dangerouslySetInnerHTML={{
           __html: await getIssueByIssueName(issueName)
