@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body className=" dark:bg-black dark:text-white">
-        <main className=" max-w-xl p-2 m-auto mt-20 mb-4">
+        <main className=" max-w-xl p-3 m-auto mt-20 mb-4">
           {children}
           <hr className=" my-4" />
         </main>
