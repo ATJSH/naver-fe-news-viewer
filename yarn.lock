@@ -3332,9 +3332,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"naver-fs-news-viewer@workspace:.":
+"naver-fe-news-viewer@workspace:.":
   version: 0.0.0-use.local
-  resolution: "naver-fs-news-viewer@workspace:."
+  resolution: "naver-fe-news-viewer@workspace:."
   dependencies:
     "@types/node": 20.6.0
     "@types/react": 18.2.21

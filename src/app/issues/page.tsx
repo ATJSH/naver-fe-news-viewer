@@ -15,7 +15,7 @@ const IssuesPage: FC = async () => {
 
   return (
     <main>
-      <h1>fs-news Issues</h1>
+      <h1>fe-news Issues</h1>
       <p>
         data from <a href="https://github.com/naver/fe-news">naver/fe-news</a>
       </p>
