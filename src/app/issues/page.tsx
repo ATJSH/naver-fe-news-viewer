@@ -21,6 +21,7 @@ const IssuesPage: FC = async () => {
           <a
             href="https://github.com/naver/fe-news"
             className="underline text-blue-600 visited:text-purple-600"
+            target="_black"
           >
             Naver Corp.
           </a>

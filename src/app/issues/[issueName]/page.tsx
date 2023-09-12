@@ -11,10 +11,15 @@ const IssuePage: FC<{
 }> = async ({ params: { issueName } }) => {
   return (
     <main>
-      <div className=" my-2">
-        <div className=" text-5xl">📰</div>
-        <Link href="/issues" className="text-lg">
-          <span>← 뉴스 목록</span>
+      <div className=" mb-3">
+        <div className=" text-5xl">
+          <Link href="/issues">📰</Link>
+        </div>
+        <Link
+          href="/issues"
+          className="text-lg hover:underline underline md:no-underline"
+        >
+          <span>← 뉴스레터 목록</span>
         </Link>
       </div>
       <div className="my-4">
@@ -24,6 +29,7 @@ const IssuePage: FC<{
           <div className=" align-middle">{issueName}</div>
           <a
             href={`https://github.com/naver/fe-news/blob/master/issues/${issueName}.md`}
+            target="_blank"
             className=" text-blue-600 visited:text-purple-600 w-fit"
           >
             <svg

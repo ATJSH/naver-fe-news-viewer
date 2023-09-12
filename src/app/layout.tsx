@@ -23,7 +23,11 @@ export default function RootLayout({
         <footer className=" text-center text-zinc-500 mb-7">
           <p>
             Naver Corp.와는 어떠한 관련이 없는 비공식 뷰어입니다. &copy;
-            <a href="https://github.com/naver/fe-news" className=" underline">
+            <a
+              href="https://github.com/naver/fe-news"
+              className=" underline"
+              target="_black"
+            >
               Naver Corp.
             </a>
             , 모든 저작권 보유
@@ -33,6 +37,7 @@ export default function RootLayout({
             <a
               href="https://github.com/ATJSH/naver-fe-news-viewer"
               className="underline"
+              target="_black"
             >
               ATJSH/naver-fe-news-viewer
             </a>

@@ -26,7 +26,9 @@ export async function getIssueByIssueName(issueName: string) {
 
   const contentHtml = processedContent.toString();
 
-  return contentHtml.replace(/&#x3C;img/g, "<img");
+  return contentHtml
+    .replaceAll(/&#x3C;img/g, "<img")
+    .replaceAll("<a href=", '<a target="_blank" href=');
 }
 
 export async function getIssues(): Promise<string[]> {
