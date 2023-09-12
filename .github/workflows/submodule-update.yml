@@ -16,3 +16,5 @@ jobs:
 
       - name: GitHub Action Submodule Updates
         uses: releasehub-com/github-action-create-pr-parent-submodule@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
