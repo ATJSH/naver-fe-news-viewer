@@ -11,7 +11,7 @@ const IssuePage: FC<{
   return (
     <main>
       <p>
-        <b>📰 naver/fe-news 뉴스레터 뷰어</b>
+        <b>📰 naver/fe-news 뉴스레터 뷰어 (비공식)</b>
         <br />
         {issueName}{" "}
         <a
