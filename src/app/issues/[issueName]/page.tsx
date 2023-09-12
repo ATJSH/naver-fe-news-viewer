@@ -1,8 +1,7 @@
+import { Metadata } from "next";
 import Link from "next/link";
-import Head from "next/head";
 import { FC } from "react";
 import { getIssueByIssueName, getIssues } from "../api";
-import { Metadata } from "next";
 
 const IssuePage: FC<{
   params: {
@@ -14,6 +13,13 @@ const IssuePage: FC<{
       <p>
         &copy; data from{" "}
         <a href="https://github.com/naver/fe-news">naver/fe-news</a>
+        <br />
+        read original:{" "}
+        <a
+          href={`https://github.com/naver/fe-news/blob/master/issues/${issueName}.md`}
+        >
+          github.com/naver/issues/fe-news/{issueName}.md
+        </a>
       </p>
       <header
         style={{
@@ -24,6 +30,8 @@ const IssuePage: FC<{
       >
         <Link href="/issues">← Back to issues</Link>
       </header>
+      <br />
+      <hr />
       <div
         dangerouslySetInnerHTML={{
           __html: await getIssueByIssueName(issueName)

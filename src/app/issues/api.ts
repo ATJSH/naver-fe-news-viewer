@@ -1,8 +1,8 @@
+import fs from "fs/promises";
 import matter from "gray-matter";
 import path from "path";
 import { remark } from "remark";
 import html from "remark-html";
-import fs from "fs/promises";
 
 export async function getIssueByIssueName(issueName: string) {
   const fullPath = path.join(
@@ -16,11 +16,17 @@ export async function getIssueByIssueName(issueName: string) {
   const matterResult = matter(fileContents);
 
   const processedContent = await remark()
-    .use(html)
+    .use(html, {
+      allowDangerousHtml: true,
+      closeSelfClosing: true,
+      allowDangerousCharacters: true,
+      sanitize: false
+    })
     .process(matterResult.content);
-  const contentHtml = processedContent.toString();
 
-  return contentHtml;
+  const contentHtml = processedContent.toString()
+
+  return contentHtml.replace(/&#x3C;img/g, "<img");
 }
 
 export async function getIssues(): Promise<string[]> {
