@@ -24,7 +24,7 @@ export async function getIssueByIssueName(issueName: string) {
     })
     .process(matterResult.content);
 
-  const contentHtml = processedContent.toString()
+  const contentHtml = processedContent.toString();
 
   return contentHtml.replace(/&#x3C;img/g, "<img");
 }

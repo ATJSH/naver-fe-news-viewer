@@ -1,8 +1,5 @@
-import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-
-const inter = Inter({ subsets: ["latin"] });
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "naver/fe-news 뉴스레터 뷰어 (비공식)",
@@ -17,21 +14,29 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        {children}
-        <hr />
-        <footer>
-          Naver Corp.와는 어떠한 관련이 없는 비공식 뷰어입니다.
-          <br />
-          &copy;<a href="https://github.com/naver/fe-news">Naver Corp.</a>, 모든
-          저작권 보유
-          <br />
-          <br />
-          뷰어 소스코드:{" "}
-          <a href="https://github.com/ATJSH/naver-fe-news-viewer">
-            ATJSH/naver-fe-news-viewer
-          </a>
+    <html lang="ko">
+      <body className=" dark:bg-black dark:text-white">
+        <main className=" max-w-xl p-2 m-auto mt-20 mb-4">
+          {children}
+          <hr className=" my-4" />
+        </main>
+        <footer className=" text-center text-zinc-500 mb-7">
+          <p>
+            Naver Corp.와는 어떠한 관련이 없는 비공식 뷰어입니다. &copy;
+            <a href="https://github.com/naver/fe-news" className=" underline">
+              Naver Corp.
+            </a>
+            , 모든 저작권 보유
+          </p>
+          <p>
+            뷰어 소스코드:{" "}
+            <a
+              href="https://github.com/ATJSH/naver-fe-news-viewer"
+              className="underline"
+            >
+              ATJSH/naver-fe-news-viewer
+            </a>
+          </p>
         </footer>
       </body>
     </html>
