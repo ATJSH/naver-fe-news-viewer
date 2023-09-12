@@ -2,7 +2,7 @@ name: fe-news git submodule update
 
 on:
   schedule:
-    - cron: "0 0 * * *"
+    - cron: "0 0 10 * *"
 
   workflow_dispatch:
 
@@ -22,14 +22,11 @@ jobs:
           git submodule update --remote --merge
           if [ -z "$(git status --porcelain)" ]; then
             echo "No changes to commit"
-            echo "gitstatus=nochange" >> $GITHUB_OUTPUT
           else 
             echo "There are changes to commit"
-            echo "gitstatus=change" >> $GITHUB_OUTPUT
           fi
 
       - name: Commit
-        if: ${{ steps.checkgit.outputs.gitstatus }} == 'change'
         run: |
           git config --local user.email "github-actions@github.com"
           git config --local user.name "github-actions"
@@ -37,7 +34,6 @@ jobs:
           git push
 
       - name: Push to main branch
-        if: ${{ steps.checkgit.outputs.gitstatus }} == 'change'
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
