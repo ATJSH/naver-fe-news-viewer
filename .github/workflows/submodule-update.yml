@@ -17,6 +17,7 @@ jobs:
           submodules: true
 
       - name: Update if needed, if not, exit
+        id: checkgit
         run: |
           git submodule update --remote --merge
           if [ -z "$(git status --porcelain)" ]; then
@@ -27,12 +28,8 @@ jobs:
             echo "gitstatus=change" >> $GITHUB_OUTPUT
           fi
 
-  update:
-    name: update
-    if: ${{ jobs.check.outputs.gitstatus }} == 'change'
-    runs-on: ubuntu-latest
-    steps:
       - name: Commit
+        if: ${{ steps.checkgit.outputs.gitstatus }} == 'change'
         run: |
           git config --local user.email "github-actions@github.com"
           git config --local user.name "github-actions"
@@ -40,6 +37,7 @@ jobs:
           git push
 
       - name: Push to main branch
+        if: ${{ steps.checkgit.outputs.gitstatus }} == 'change'
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
