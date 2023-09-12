@@ -1959,6 +1959,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"husky@npm:^8.0.0":
+  version: 8.0.3
+  resolution: "husky@npm:8.0.3"
+  bin:
+    husky: lib/bin.js
+  checksum: 837bc7e4413e58c1f2946d38fb050f5d7324c6f16b0fd66411ffce5703b294bd21429e8ba58711cd331951ee86ed529c5be4f76805959ff668a337dbfa82a1b0
+  languageName: node
+  linkType: hard
+
 "iconv-lite@npm:^0.6.2":
   version: 0.6.3
   resolution: "iconv-lite@npm:0.6.3"
@@ -2652,25 +2661,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"my-app@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "my-app@workspace:."
-  dependencies:
-    "@types/node": 20.6.0
-    "@types/react": 18.2.21
-    "@types/react-dom": 18.2.7
-    autoprefixer: 10.4.15
-    eslint: 8.49.0
-    eslint-config-next: 13.4.19
-    next: 13.4.19
-    postcss: 8.4.29
-    react: 18.2.0
-    react-dom: 18.2.0
-    tailwindcss: 3.3.3
-    typescript: 5.2.2
-  languageName: unknown
-  linkType: soft
-
 "mz@npm:^2.7.0":
   version: 2.7.0
   resolution: "mz@npm:2.7.0"
@@ -2697,6 +2687,26 @@ __metadata:
   checksum: 23ad088b08f898fc9b53011d7bb78ec48e79de7627e01ab5518e806033861bef68d5b0cd0e2205c2f36690ac9571ff6bcb05eb777ced2eeda8d4ac5b44592c3d
   languageName: node
   linkType: hard
+
+"naver-fs-news-viewer@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "naver-fs-news-viewer@workspace:."
+  dependencies:
+    "@types/node": 20.6.0
+    "@types/react": 18.2.21
+    "@types/react-dom": 18.2.7
+    autoprefixer: 10.4.15
+    eslint: 8.49.0
+    eslint-config-next: 13.4.19
+    husky: ^8.0.0
+    next: 13.4.19
+    postcss: 8.4.29
+    react: 18.2.0
+    react-dom: 18.2.0
+    tailwindcss: 3.3.3
+    typescript: 5.2.2
+  languageName: unknown
+  linkType: soft
 
 "negotiator@npm:^0.6.3":
   version: 0.6.3

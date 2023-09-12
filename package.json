@@ -10,7 +10,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postinstall": "husky install"
   },
   "dependencies": {
     "@types/node": "20.6.0",
@@ -26,5 +27,8 @@
     "tailwindcss": "3.3.3",
     "typescript": "5.2.2"
   },
-  "packageManager": "yarn@3.6.3"
+  "packageManager": "yarn@3.6.3",
+  "devDependencies": {
+    "husky": "^8.0.0"
+  }
 }
