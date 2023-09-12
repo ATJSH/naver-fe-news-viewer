@@ -2,7 +2,7 @@ name: fe-news git submodule update
 
 on:
   schedule:
-    - cron: "0 0 * * 0"
+    - cron: "0 0 * * *"
 
   workflow_dispatch:
 
@@ -13,8 +13,26 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          submodules: true
 
-      - name: GitHub Action Submodule Updates
-        uses: releasehub-com/github-action-create-pr-parent-submodule@v1
+      - name: Update if needed, if not, exit
+        run: |
+          git submodule update --remote --merge
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "No changes to commit"
+            exit 0
+          fi
+
+      - name: Commit
+        run: |
+          git config --local user.email "github-actions@github.com"
+          git config --local user.name "github-actions"
+          git commit -am "feat: update fe-news git submodule"
+          git push
+
+      - name: Push to main branch
+        uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
