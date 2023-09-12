@@ -7,8 +7,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  update:
-    name: update
+  check:
+    name: check
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -21,9 +21,17 @@ jobs:
           git submodule update --remote --merge
           if [ -z "$(git status --porcelain)" ]; then
             echo "No changes to commit"
-            exit 0
+            echo "gitstatus=nochange" >> $GITHUB_OUTPUT
+          else 
+            echo "There are changes to commit"
+            echo "gitstatus=change" >> $GITHUB_OUTPUT
           fi
 
+  update:
+    name: update
+    if: steps.check.outputs.gitstatus == 'change'
+    runs-on: ubuntu-latest
+    steps:
       - name: Commit
         run: |
           git config --local user.email "github-actions@github.com"
