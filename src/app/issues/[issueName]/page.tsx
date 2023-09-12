@@ -57,6 +57,6 @@ export async function generateMetadata({
   };
 }): Promise<Metadata> {
   return {
-    title: `${issueName} | unofficial fe-news viewer`
+    title: `${issueName} | fe-news`
   };
 }
