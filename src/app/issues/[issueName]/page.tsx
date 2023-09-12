@@ -11,14 +11,13 @@ const IssuePage: FC<{
   return (
     <main>
       <p>
-        &copy; data from{" "}
-        <a href="https://github.com/naver/fe-news">naver/fe-news</a>
+        <b>📰 naver/fe-news 뉴스레터 뷰어</b>
         <br />
-        read original:{" "}
+        {issueName}{" "}
         <a
           href={`https://github.com/naver/fe-news/blob/master/issues/${issueName}.md`}
         >
-          github.com/naver/issues/fe-news/{issueName}.md
+          #
         </a>
       </p>
       <header
@@ -28,7 +27,7 @@ const IssuePage: FC<{
           backgroundColor: "white"
         }}
       >
-        <Link href="/issues">← Back to issues</Link>
+        <Link href="/issues">← 뉴스 목록으로 돌아가기</Link>
       </header>
       <br />
       <hr />

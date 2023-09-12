@@ -21,8 +21,18 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         {children}
+        <hr />
         <footer>
-          not affiliated with Naver Corp.
+          Naver Corp.와는 어떠한 관련이 없는 비공식 뷰어입니다.
+          <br />
+          &copy;<a href="https://github.com/naver/fe-news">Naver Corp.</a>, 모든
+          저작권 보유
+          <br />
+          <br />
+          뷰어 소스코드:{" "}
+          <a href="https://github.com/ATJSH/naver-fe-news-viewer">
+            ATJSH/naver-fe-news-viewer
+          </a>
         </footer>
       </body>
     </html>
