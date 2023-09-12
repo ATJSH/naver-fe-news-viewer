@@ -1,0 +1,3 @@
+[submodule "src/fe-news"]
+	path = src/fe-news
+	url = https://github.com/naver/fe-news
