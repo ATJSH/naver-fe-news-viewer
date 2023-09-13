@@ -58,13 +58,13 @@ export function TOC({ ignoreName }: { ignoreName: string }) {
           {showingToc.map((tocItem) =>
             isFolded ? (
               <li key={tocItem.id}>
-                <span className="italic text-sm">{tocItem.text}</span>
+                <span className="text-sm">{tocItem.text}</span>
               </li>
             ) : (
               <li key={tocItem.id}>
                 <a
                   href={`#${tocItem.id}`}
-                  className="hover:underline cursor-pointer italic text-sm"
+                  className="hover:underline cursor-pointer text-sm"
                 >
                   {tocItem.text}
                 </a>
