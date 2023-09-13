@@ -16,8 +16,6 @@ function getTableOfContentByH1Tags(ignoreName: string) {
         .replace(/[^a-zA-Z0-9ㄱ-ㅎㅏ-ㅣ가-힣]/g, "")
         .replace(/\s/g, "-")}`;
 
-    console.log(id);
-
     h1Tag.id = id;
 
     toc.push({

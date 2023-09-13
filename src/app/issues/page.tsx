@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { FC } from "react";
-import { getIssues } from "./api";
+import { getH2ContentByIssueName, getIssues } from "./api";
 
 const IssuesPage: FC = async () => {
   const issues = await getIssues();
@@ -33,20 +33,32 @@ const IssuesPage: FC = async () => {
         <h2 className=" text-2xl font-bold">뉴스레터 목록</h2>
         <hr className=" my-3" />
         <ul className=" flex gap-3 flex-col w-full">
-          {issues.map((issue) => (
-            <Link
-              href={`/issues/${issue}`}
-              key={issue}
-              className="text-blue-600 visited:text-purple-600 hover:underline cursor-pointer p-3 hover:bg-zinc-100 dark:hover:bg-zinc-900"
-            >
-              <li className="">
-                <div>
-                  <div className=" text-xl">{issue}</div>
-                  <div className=" text-zinc-400 text-sm">설명 없음</div>
-                </div>
-              </li>
-            </Link>
-          ))}
+          {issues.map(async (issue) => {
+            const h2s = await getH2ContentByIssueName(issue);
+            const slicedH2s = h2s.slice(0, 3);
+
+            return (
+              <Link
+                href={`/issues/${issue}`}
+                key={issue}
+                className="text-blue-600 visited:text-purple-600 hover:underline cursor-pointer p-3 hover:bg-zinc-100 dark:hover:bg-zinc-900"
+              >
+                <li className="">
+                  <div>
+                    <div className=" text-xl">{issue}</div>
+                    <div className=" text-zinc-400 text-sm">
+                      {slicedH2s.map((h2) => (
+                        <>
+                          {`"${h2}"`} <br />
+                        </>
+                      ))}
+                      ... 외 {h2s.length - slicedH2s.length}개의 주제
+                    </div>
+                  </div>
+                </li>
+              </Link>
+            );
+          })}
         </ul>
       </div>
     </>
