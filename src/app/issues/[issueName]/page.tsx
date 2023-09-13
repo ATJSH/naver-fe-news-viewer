@@ -26,12 +26,13 @@ const IssuePage: FC<{
         <b>naver/fe-news 뉴스레터 뷰어 (비공식)</b>
         <br />
         <div className=" flex align-middle justify-between">
-          <div className=" align-middle">{issueName}</div>
+          <div className=" align-middle italic">{issueName}</div>
           <a
             href={`https://github.com/naver/fe-news/blob/master/issues/${issueName}.md`}
             target="_blank"
-            className=" text-blue-600 visited:text-purple-600 w-fit"
+            className="w-fit hover:underline"
           >
+            출처{" "}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"

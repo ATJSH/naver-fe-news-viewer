@@ -14,10 +14,11 @@ const IssuesPage: FC = async () => {
           naver/fe-news 뉴스레터 뷰어 (비공식)
         </h1>
         <p className="my-3">
-          &apos;네이버의 프론트엔드 기술 소식 큐레이션 뉴스레터&apos;를 가장
-          편하게 보는 방법
-          <br />
-          &copy;
+          네이버의 프론트엔드 기술 소식 큐레이션 뉴스레터를 가장 편하게 보는
+          방법
+        </p>
+        <p className="my-3">
+          뉴스레터 출처: &copy;
           <a
             href="https://github.com/naver/fe-news"
             className="underline text-blue-600 visited:text-purple-600"
