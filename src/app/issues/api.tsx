@@ -52,11 +52,10 @@ export async function getH2ContentByIssueName(issueName: string) {
     ) ?? []
   )
     .map((child) => {
-      return (
-        (child as any)?.children?.[0]?.children?.[0]?.value ??
-        (child as any)?.children?.[0].value ??
-        ""
-      );
+      const child1 = (child as any)?.children?.[0].value;
+      const child2 = (child as any)?.children?.[0]?.children?.[0]?.value;
+
+      return `${child1 ?? ""}${child1 ? " " : ""}${child2 ?? ""}`;
     })
     .filter((h2) => h2 != "");
 
