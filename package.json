@@ -14,26 +14,26 @@
     "postinstall": "git submodule init && git submodule update"
   },
   "dependencies": {
-    "@types/node": "20.6.0",
-    "@types/react": "18.2.21",
-    "@types/react-dom": "18.2.7",
-    "autoprefixer": "10.4.15",
-    "eslint": "8.49.0",
-    "eslint-config-next": "13.4.19",
-    "next": "13.4.19",
-    "postcss": "8.4.29",
+    "@tailwindcss/typography": "^0.5.10",
+    "next": "14.0.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-markdown": "^8.0.7",
-    "remark": "^14.0.3",
-    "remark-gfm": "^3.0.1",
-    "remark-html": "^15.0.2",
-    "tailwindcss": "3.3.3",
-    "typescript": "5.2.2"
+    "react-markdown": "^9.0.1",
+    "remark": "^15.0.1",
+    "remark-gfm": "^4.0.0",
+    "remark-html": "^16.0.1",
+    "tailwindcss": "3.3.6"
   },
-  "packageManager": "yarn@3.6.3",
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.10",
-    "husky": "^8.0.0"
-  }
+    "@types/node": "20.6.0",
+    "@types/react": "18.2.43",
+    "@types/react-dom": "18.2.17",
+    "autoprefixer": "10.4.16",
+    "eslint": "8.55.0",
+    "eslint-config-next": "14.0.4",
+    "husky": "^8.0.3",
+    "postcss": "8.4.32",
+    "typescript": "5.3.3"
+  },
+  "packageManager": "yarn@4.0.2"
 }
