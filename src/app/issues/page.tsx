@@ -48,9 +48,9 @@ const IssuesPage: FC = async () => {
                     <div className=" text-xl">{issue}</div>
                     <div className=" text-zinc-400 text-sm">
                       {slicedH2s.map((h2) => (
-                        <>
-                          {`"${h2}"`} <br />
-                        </>
+                        <span key={h2}>
+                          &quot;{h2}&quot; <br />
+                        </span>
                       ))}
                       ... 외 {h2s.length - slicedH2s.length}개의 주제
                     </div>
