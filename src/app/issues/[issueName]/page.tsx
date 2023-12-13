@@ -62,6 +62,14 @@ const IssuePage: FC<{
           __html: await getIssueByIssueName(issueName)
         }}
       />
+      <div className="mt-10">
+        <Link
+          href="/issues"
+          className="text-lg hover:underline underline md:no-underline"
+        >
+          <span>← 뉴스레터 목록으로 돌아가기</span>
+        </Link>
+      </div>
     </main>
   );
 };
